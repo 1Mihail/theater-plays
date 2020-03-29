@@ -11,3 +11,4 @@ To make sure your postgres container is running, you can execute the following c
 ```
 docker ps
 ```
+Documentation available [here](https://docs.google.com/document/d/1RZwr8hjpY6JaBuiy4ww0YYtd9ua8_FYodb93aFrmStg).
