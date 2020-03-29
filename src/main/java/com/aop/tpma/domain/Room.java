@@ -14,7 +14,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(unique=true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String name;
 
     @Column(nullable = false, name = "number_of_seats")

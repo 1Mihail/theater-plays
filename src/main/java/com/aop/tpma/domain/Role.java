@@ -13,7 +13,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(unique=true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String name;
 
     @JsonIgnore

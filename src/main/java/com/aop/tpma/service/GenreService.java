@@ -11,6 +11,7 @@ import java.util.List;
 public class GenreService {
     @Autowired
     private GenreRepository genreRepository;
+
     public List<Genre> getGenres() {
         return genreRepository.findAll();
     }

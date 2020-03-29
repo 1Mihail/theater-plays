@@ -11,6 +11,7 @@ import java.util.List;
 public class ActorService {
     @Autowired
     private ActorRepository actorRepository;
+
     public List<Actor> getActors() {
         return actorRepository.findAll();
     }

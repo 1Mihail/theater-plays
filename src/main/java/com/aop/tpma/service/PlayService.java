@@ -3,7 +3,6 @@ package com.aop.tpma.service;
 import com.aop.tpma.dao.PlayRepository;
 import com.aop.tpma.domain.Play;
 import com.aop.tpma.exception.ItemNotPresentInDatabaseException;
-import org.hibernate.TransientPropertyValueException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Service;

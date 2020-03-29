@@ -11,6 +11,7 @@ import java.util.List;
 public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
+
     public List<Room> getRooms() {
         return roomRepository.findAll();
     }
