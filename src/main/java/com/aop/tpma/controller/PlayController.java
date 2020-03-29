@@ -15,7 +15,7 @@ import java.util.List;
  * Spring RestController takes care of mapping request data to the defined request handler method.
  */
 @RestController
-@RequestMapping(path = "/api/play")
+@RequestMapping(path = "/api/")
 public class PlayController {
     @Autowired
     private PlayService playService;
@@ -25,7 +25,7 @@ public class PlayController {
         return playService.getPlays();
     }
 
-    @RequestMapping(path = "/savePlay", method = RequestMethod.POST)
+    @RequestMapping(path = "/insertPlay", method = RequestMethod.POST)
     public Play savePlay(@RequestBody Play play) {
         return playService.savePlay(play);
     }

@@ -3,6 +3,7 @@ package com.aop.tpma.domain;
 import com.aop.tpma.util.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
