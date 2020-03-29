@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class TheaterServiceAspect {
-    private static final Logger LOGGER = LogManager.getLogger(TheaterServiceAspect.class);
+public class PlayServiceAspect {
+    private static final Logger LOGGER = LogManager.getLogger(PlayServiceAspect.class);
 
-    @Before(value = "execution(* com.aop.tpma.service.TheaterService.getTheaters())")
+    @Before(value = "execution(* com.aop.tpma.service.PlayService.getPlays())")
     public void beforeAdvice(JoinPoint joinPoint) {
         LOGGER.info("Before method:" + joinPoint.getSignature());
     }
 
-    @After(value = "execution(* com.aop.tpma.service.TheaterService.getTheaters())")
+    @After(value = "execution(* com.aop.tpma.service.PlayService.getPlays())")
     public void afterAdvice(JoinPoint joinPoint) {
         LOGGER.info("After method:" + joinPoint.getSignature());
     }

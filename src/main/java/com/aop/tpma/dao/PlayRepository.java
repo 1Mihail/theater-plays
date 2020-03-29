@@ -1,6 +1,6 @@
 package com.aop.tpma.dao;
 
-import com.aop.tpma.domain.Theater;
+import com.aop.tpma.domain.Play;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * You can use it to create, read, update, delete, data in a given database (for example, POSTGRESQL).
  **/
 @Repository
-public interface TheaterRepository extends JpaRepository<Theater, Long> {
+public interface PlayRepository extends JpaRepository<Play, Long> {
 }
