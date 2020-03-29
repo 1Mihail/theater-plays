@@ -1,5 +1,7 @@
 package com.aop.tpma.domain;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 /**
@@ -9,19 +11,12 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "theater")
+@Getter
 public class Theater {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
 
 }
