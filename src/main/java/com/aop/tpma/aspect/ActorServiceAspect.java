@@ -1,6 +1,6 @@
 package com.aop.tpma.aspect;
 
-import com.aop.tpma.domain.Play;
+import com.aop.tpma.domain.Actor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -12,33 +12,29 @@ import org.springframework.util.StopWatch;
 
 @Aspect
 @Component
-public class PlayServiceAspect {
-    private static final Logger LOGGER = LogManager.getLogger(PlayServiceAspect.class);
+public class ActorServiceAspect {
+    private static final Logger LOGGER = LogManager.getLogger(ActorServiceAspect.class);
 
-    @Before(value = "execution(* com.aop.tpma.service.PlayService.getPlays())")
+    @Before(value = "execution(* com.aop.tpma.service.ActorService.getActors())")
     public void beforeAdvice(JoinPoint joinPoint) {
         LOGGER.info("Started new operation: {}", joinPoint.getSignature().getName());
     }
 
-    @After(value = "execution(* com.aop.tpma.service.PlayService.getPlays())")
+    @After(value = "execution(* com.aop.tpma.service.ActorService.getActors())")
     public void afterAdvice(JoinPoint joinPoint) {
         LOGGER.info("Started new operation: {}", joinPoint.getSignature().getName());
     }
 
-    @AfterReturning(value = "execution(* com.aop.tpma.service.PlayService.savePlay(..))", returning = "insertedPlay")
-    public void afterReturningAdvice(JoinPoint joinPoint, Play insertedPlay) {
-        if (insertedPlay != null) {
-            LOGGER.info("A new play was inserted({}): {}", joinPoint.getSignature().getName(), insertedPlay.getTitle());
+    @AfterReturning(value = "execution(* com.aop.tpma.service.ActorService.saveActor(..))", returning = "insertedActor")
+    public void afterReturningAdvice(JoinPoint joinPoint, Actor insertedActor) {
+        if (insertedActor != null) {
+            LOGGER.info("A new actor was inserted({}): {} {}", joinPoint.getSignature().getName(), insertedActor.getFirstName(), insertedActor.getLastName());
         }
     }
 
-    @Around(value = "execution(* com.aop.tpma.service.PlayService.savePlay(..))")
+    @Around(value = "execution(* com.aop.tpma.service.ActorService.saveActor(..))")
     public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();
-
-        //Get intercepted method details
-        String className = methodSignature.getDeclaringType().getSimpleName();
-        String methodName = methodSignature.getName();
 
         final StopWatch stopWatch = new StopWatch();
 
@@ -48,9 +44,8 @@ public class PlayServiceAspect {
         stopWatch.stop();
 
         //Log method execution time
-        LOGGER.info("Execution time of {}.{} :: {} ms", className, methodName, stopWatch.getTotalTimeMillis());
+        LOGGER.info("Execution time of {}.{} :: {} ms", methodSignature.getDeclaringType().getSimpleName(), methodSignature.getName(), stopWatch.getTotalTimeMillis());
 
         return result;
     }
-
 }
