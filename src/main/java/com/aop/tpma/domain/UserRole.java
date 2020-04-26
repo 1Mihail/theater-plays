@@ -6,9 +6,9 @@ import lombok.Getter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "role")
+@Table(name = "user_role")
 @Getter
-public class Role {
+public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -17,6 +17,12 @@ public class Role {
     private String name;
 
     @JsonIgnore
-    @OneToOne
+    @OneToOne(mappedBy = "userRole")
     private User user;
+
+    public UserRole() {
+    }
+    public UserRole(String name) {
+        this.name = name;
+    }
 }
