@@ -1,7 +1,7 @@
 package com.aop.tpma.util;
 
 public enum Role {
-    USER("USER");
+    MANAGER("MANAGER"), ACTOR("ACTOR"), ADMIN("ADMIN");
 
     Role(String role) {
 

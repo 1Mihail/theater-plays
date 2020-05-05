@@ -32,7 +32,7 @@ public class User {
 
     public User(String email, String password, String role) {
         this.email = email;
-        this.password=password;
+        this.password = password;
         this.userRole = new UserRole(role);
     }
 
