@@ -31,7 +31,7 @@ public class RoleSecurityHandlerAspect {
         String jwt = jwtUtils.parseJwt(request);
         if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
             String role = jwtUtils.getRoleFromJwtToken(jwt);
-            if (!role.equalsIgnoreCase(Role.ADMIN.toString()) || !role.equalsIgnoreCase(Role.MANAGER.toString())) {
+            if (!role.equalsIgnoreCase(Role.ADMIN.toString()) && !role.equalsIgnoreCase(Role.MANAGER.toString())) {
                 throw new ForbiddenException("Your role is " + role + " and you are not allowed to view this content!");
             }
         }
