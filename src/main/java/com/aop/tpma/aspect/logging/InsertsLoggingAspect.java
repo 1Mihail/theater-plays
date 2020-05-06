@@ -1,4 +1,4 @@
-package com.aop.tpma.aspect;
+package com.aop.tpma.aspect.logging;
 
 import com.aop.tpma.domain.Actor;
 import com.aop.tpma.domain.Genre;

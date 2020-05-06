@@ -1,4 +1,4 @@
-package com.aop.tpma.aspect;
+package com.aop.tpma.aspect.logging;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;

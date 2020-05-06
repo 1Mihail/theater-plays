@@ -1,4 +1,4 @@
-package com.aop.tpma.aspect;
+package com.aop.tpma.aspect.security;
 
 import com.aop.tpma.exception.ForbiddenException;
 import com.aop.tpma.security.jwt.JwtUtils;
